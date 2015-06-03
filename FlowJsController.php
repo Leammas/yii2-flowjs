@@ -51,8 +51,8 @@ class FlowJsController extends Controller
     {
         $this->target = Yii::getAlias($this->module->targetDir);
         $this->temp = Yii::getAlias($this->module->tempDir);
+        $this->enableCsrfValidation = false;
     }
-
 
     public function actionUpload()
     {
@@ -72,7 +72,7 @@ class FlowJsController extends Controller
         $filename = $this->getFlowParams()['flowFilename'];
         if (is_callable($this->module->fileNameHandler))
         {
-            $filename = call_user_func_array($this->fileNameHandler, [$filename]);
+            $filename = call_user_func_array($this->module->fileNameHandler, [$filename]);
         }
 
         if ($request->isGet) {
