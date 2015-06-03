@@ -3,7 +3,6 @@ namespace leammas\yii2\flowjs;
 
 use yii\base\Widget;
 use yii\web\JsExpression;
-use leammas\yii2\flowjs\FlowJsAsset;
 use yii\web\View;
 use yii\helpers\Json;
 use yii\helpers\Html;
@@ -13,7 +12,7 @@ use yii\helpers\Html;
  *
  * @author Самойлов Владимир <leammas@gmail.com>
  */
-class FlowJs extends Widget
+class FlowJsWidget extends Widget
 {
 
     const PLUGIN_NAME = 'flowjs';
