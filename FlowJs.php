@@ -5,7 +5,7 @@ use Yii;
 use yii\base\Module;
 
 /**
- * %ClassDescription%
+ * Main module class
  *
  * @author Самойлов Владимир <leammas@gmail.com>
  */

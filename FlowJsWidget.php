@@ -8,7 +8,7 @@ use yii\helpers\Json;
 use yii\helpers\Html;
 
 /**
- * %ClassDescription%
+ * Widget providing ability to upload files with flow-js
  *
  * @author Самойлов Владимир <leammas@gmail.com>
  */
@@ -20,7 +20,7 @@ class FlowJsWidget extends Widget
     /**
      * @var array Constructor options for the flow-js plugin.
      * @todo default 'target' - url
-     * @see https://github.com/flowjs/flow.js#full-documentation
+     * @see https://github.com/flowjs/flow.js#configuration
      */
     public $clientOptions = [];
 

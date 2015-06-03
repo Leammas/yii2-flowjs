@@ -4,7 +4,7 @@ namespace leammas\yii2\flowjs;
 use yii\web\AssetBundle;
 
 /**
- * %ClassDescription%
+ * Main module asset
  *
  * @author Самойлов Владимир <leammas@gmail.com>
  */

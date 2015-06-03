@@ -9,7 +9,7 @@ use Flow\File;
 use yii\web\Response;
 
 /**
- * %ClassDescription%
+ * Controller handling file upload operation
  *
  * @author Самойлов Владимир <leammas@gmail.com>
  */
