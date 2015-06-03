@@ -26,7 +26,7 @@ Usage
 -----
 
 ### Widget
-Add the widget with corresponding settings in your view. For more insight about settings and restrictions @see FlowJsWidget.php.
+Add the widget with corresponding settings in your view. For more insight about settings and restrictions @see `FlowJsWidget.php`.
 Don't forget to add `target` setting containing url to FlowJsController Upload action (see below).
 
 ```php
@@ -36,7 +36,8 @@ Don't forget to add `target` setting containing url to FlowJsController Upload a
     'options' => ['class' => 'btn btn-default', 'id' => 'flow_button'],
     'targetTag' => 'button',
     'targetContent' => 'Upload!'
-]); ?>```
+]); ?>
+```
 
 ### Module
 To save files uploaded by the widget, you should register this extension as an application module in your web.php:
