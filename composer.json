@@ -1,0 +1,23 @@
+{
+    "name": "leammas/yii2-flowjs",
+    "description": "Easy to use widget and controller for adding HTML5 fully customizable file upload to your app",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension","flowjs","flow-js","widget","flow-php","yii2-flowjs"," html5"," upload"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Leammas",
+            "email": "leammas@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*",
+        "flowjs/flow-php-server": "^1.0",
+        "bower-asset/flow-js": "@stable"
+    },
+    "autoload": {
+        "psr-4": {
+            "leammas\\yii2\\flowjs\\": ""
+        }
+    }
+}
