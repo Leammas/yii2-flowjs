@@ -33,6 +33,13 @@ class FlowJs extends Module
     public $fileNameHandler;
 
     /**
+     * Pass TRUE in config if you'd like to allow accepting upload requests from another domain.
+     * This could be a security issue if enabled!
+     * @var bool
+     */
+    public $allowCrossDomain = false;
+
+    /**
      * Checks whether dir exists if not, tries to create it
      * @param $path
      * @throws \RuntimeException

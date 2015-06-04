@@ -63,12 +63,20 @@ class FlowJsController extends Controller
             Uploader::pruneChunks($this->temp);
         }
 
-        $config = new Config();
-        $config->setTempDir($this->temp);
-        $file = new File($config);
         $response = Yii::$app->response;
         $request = Yii::$app->request;
         $response->format = Response::FORMAT_RAW;
+
+        if ($this->module->allowCrossDomain)
+        $response->headers->add('Access-Control-Allow-Origin', '*');
+        if ($request->isOptions)
+        {
+            $response->headers->add('Allow', 'GET,HEAD,POST,OPTIONS,TRACE');
+            return;
+        }
+        $config = new Config();
+        $config->setTempDir($this->temp);
+        $file = new File($config);
         $filename = $this->getFlowParams()['flowFilename'];
         if (is_callable($this->module->fileNameHandler))
         {
@@ -80,7 +88,6 @@ class FlowJsController extends Controller
                 $response->statusCode = 200;
             } else {
                 $response->statusCode = 204;
-                //$response->statusText = "No Content";
                 return;
             }
         } else {
