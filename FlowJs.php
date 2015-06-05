@@ -40,6 +40,19 @@ class FlowJs extends Module
     public $allowCrossDomain = false;
 
     /**
+     * With $allowCrossDomain enabled allows client to pass headers listed in this variable.
+     * @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Access-Control-Allow-Headers
+     * @var array
+     */
+    public $allowCORSHeaders = '';
+
+    /**
+     * @var string
+     * @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Access-Control-Allow-Origin
+     */
+    public $allowCORSOrigin = '*';
+
+    /**
      * Checks whether dir exists if not, tries to create it
      * @param $path
      * @throws \RuntimeException

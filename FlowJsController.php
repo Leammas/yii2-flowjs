@@ -68,7 +68,11 @@ class FlowJsController extends Controller
         $response->format = Response::FORMAT_RAW;
 
         if ($this->module->allowCrossDomain)
-        $response->headers->add('Access-Control-Allow-Origin', '*');
+        {
+            $response->headers->add('Access-Control-Allow-Origin', $this->module->allowCORSOrigin);
+            $response->headers->add('Access-Control-Allow-Methods', 'GET,HEAD,POST,OPTIONS,TRACE');
+            $response->headers->add('Access-Control-Allow-Headers', $this->module->allowCORSHeaders);
+        }
         if ($request->isOptions)
         {
             $response->headers->add('Allow', 'GET,HEAD,POST,OPTIONS,TRACE');
