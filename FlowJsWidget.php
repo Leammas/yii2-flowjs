@@ -141,7 +141,9 @@ var {$id} = new Flow({$this->_hashVar});
 JS;
         foreach ($this->eventHandlers as $event => $handler)
         {
-            $js .= "{$id}.on('{$event}', {$handler});";
+            $js .= <<<JS
+{$id}.on('{$event}', {$handler});
+JS;
         }
         FlowJsAsset::register($view);
         $view->registerJs($js);
