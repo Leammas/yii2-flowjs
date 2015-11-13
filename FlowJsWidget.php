@@ -51,6 +51,23 @@ class FlowJsWidget extends Widget
      */
     public $targetContent = '';
 
+	/**
+	 * @var bool Pass in true to allow directories to be selected (Chrome only).
+	 */
+	public $assignBrowseIsDirectory = false;
+
+	/**
+	 * @var bool prevent multi file upload
+	 */
+	public $assignBrowseSingleFile = false;
+
+	/**
+	 * @var array set custom attributes:
+	 *  http://www.w3.org/TR/html-markup/input.file.html#input.file-attributes
+	 *  eg: accept: 'image/*'
+	 */
+	public $assignBrowseAttributes = [];
+
     /**
      * @var string the hashed variable to store the pluginOptions
      */
@@ -121,7 +138,6 @@ class FlowJsWidget extends Widget
     }
 
     /**
-     * @todo make attributes of assignBrowse available
      * @todo fix AssignDrop
      * Registers the needed client script and options.
      */
@@ -134,9 +150,14 @@ class FlowJsWidget extends Widget
         $this->initClientOptions();
         $this->hashPluginOptions($view);
         $id = $this->getId();
+
+	    $isDirectory = $this->assignBrowseIsDirectory ? 'true' : 'false';
+	    $singleFile = $this->assignBrowseSingleFile ? 'true' : 'false';
+	    $attributes = Json::encode($this->assignBrowseAttributes);
+
         $js .= <<<JS
 var {$id} = new Flow({$this->_hashVar});
-{$id}.assignBrowse(document.getElementById('{$id}'));
+{$id}.assignBrowse(document.getElementById('{$id}'), {$isDirectory}, {$singleFile}, {$attributes});
 {$id}.assignDrop(document.getElementById('{$id}'));
 JS;
         foreach ($this->eventHandlers as $event => $handler)
