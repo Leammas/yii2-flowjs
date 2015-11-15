@@ -124,7 +124,6 @@ class FlowJsWidget extends Widget
 		}
 	}
 	/**
-	 * @todo make attributes of assignBrowse available
 	 * @todo fix AssignDrop
 	 * Registers the needed client script and options.
 	 */
